@@ -155,7 +155,6 @@ h2 {
 .nonFiction {
   background-color: rgba(24, 24, 23, 0.8);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   color: var(--White);
 }
 
@@ -163,6 +162,7 @@ h2 {
   background: transparent;
   color: var(--Black);
   backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
 }
 
 .Filling {
