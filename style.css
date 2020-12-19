@@ -1,0 +1,258 @@
+:root {
+  --White: #e8eddf;
+  --Grell: #cfdbd5;
+  --Yellow: #f5cb5c;
+  --Black: #242423;
+  --Grey: #333533;
+  --logoFont: "Bahiana", cursive;
+  --titleFont: "Staatliches", cursive;
+  --btnFont: "Bebas Neue", cursive;
+  --paragraphFont: "Assistant", sans-serif;
+  --btnHeight: 1.6em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: var(--Black);
+}
+
+h1 {
+  font-family: var(--titleFont);
+  color: var(--Grell);
+  font-size: 5rem;
+  font-weight: 100;
+  
+}
+
+h2 {
+  font-family: var(--titleFont);
+  color: var(--Black);
+  font-size: 4rem;
+  font-weight: 100;
+  padding: 1em 0;
+}
+/*Landing page*/
+.grid-container {
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1.3fr 0.8fr 0.4fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Navbar Logo Logo Logo Logo"
+    "Navbar Contact Contact Contact Contact"
+    "Navbar toGallery toGallery toGallery toGallery"
+    "Navbar Filling Filling Filling Filling";
+}
+.Navbar {
+  grid-area: Navbar;
+  height: 80vh;
+  padding: 4em 0 2em 4em;
+}
+.NavbarBg {
+  width: calc(50vw + 16em);
+  height: calc(80vh - 6em);
+  background-image: url(https://images.pexels.com/photos/4914352/pexels-photo-4914352.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10;
+  position: absolute;
+}
+
+/*Logo*/
+.Logo {
+  width: 50vw;
+  grid-area: Logo;
+  background-color: var(--Black);
+}
+.LogoName {
+  font-family: var(--logoFont);
+  font-size: 10rem;
+  color: var(--White);
+  text-align: center;
+  padding-top: 1em;
+}
+.Sublogo {
+  font-family: var(--titleFont);
+  font-size: 5rem;
+  color: var(--Grell);
+  text-align: center;
+}
+
+/*Kontakt-button*/
+
+.Contact {
+  grid-area: Contact;
+  background-color: var(--Black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.contactBtn {
+  width: 100%;
+  max-width: 7em;
+  height: var(--btnHeight);
+  padding: 0.2em;
+  font-size: 2rem;
+  font-weight: 900;
+  border: var(--Yellow) solid 2px;
+  font-family: var(--btnFont);
+  color: var(--Yellow);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.9s ease-out all;
+}
+
+
+.contactBtn:hover {
+  cursor: pointer;
+  border: var(--White) solid 2px;
+  color: var(--Black);
+  background: var(--Yellow);
+  transition: 0.9s ease-out all;
+}
+
+/*Btns zur Gallery*/
+
+.toGallery {
+  grid-area: toGallery;
+  background-color: transparent;
+}
+
+.galleryContainer {
+  width: 40em;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 1;
+  left: -20em;
+  background-color: transparent;
+}
+.galleryContainer > a {
+  width: 20em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--btnFont);
+  font-size: 4rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.9s ease-out all;
+}
+
+.nonFiction {
+  background-color: rgba(24, 24, 23, 0.8);
+  backdrop-filter: blur(20px);
+  color: var(--White);
+}
+
+.Fiction {
+  background: transparent;
+  color: var(--Black);
+  backdrop-filter: blur(20px);
+}
+
+.Filling {
+  grid-area: Filling;
+  background-color: var(--Black);
+}
+
+/*Portfolio */
+.portfolioTitle {
+  text-align: center;
+  width: 100vw;
+  height: 15vh;
+  margin-top: 2em;
+}
+
+.galleryBoxContainer, .vitaBox{
+  padding: 4em;
+  display: flex;
+  flex-direction: row;
+}
+
+.galleryBox {
+  width: calc(70% - 4em);
+  height: 65vh;
+  background-color: var(--Grell);
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+/*fiction Gallery must have the shadow the oder way around*/
+
+#fi {
+  box-shadow: -5px 5px 15px 5px #000000;
+}
+
+.galleryDesc {
+  width: calc (30% - 18em);
+  margin: 0 5em 0 5em;
+  display: grid;
+}
+
+.galleryTxt {
+  color: var(--White);
+  font-family: var(--paragraphFont);
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+
+/*parallax*/
+
+.parallax {
+  width: 100vw;
+  height: 40vh;
+  background-image: url("https://images.pexels.com/photos/2851474/pexels-photo-2851474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+/*Vita*/
+
+.vitaIntro {margin-top: 2em;
+text-align: center;}
+
+/*4em padding*/
+
+
+.imgBox, .cv, .projects {
+  width: calc(33vw - 7em);
+  height: 80vh;
+  margin: 0 2em 0 2em;
+
+}
+
+.imgBox {
+  background-image: url("https://images.pexels.com/photos/381843/pexels-photo-381843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  box-shadow: 5px 5px 15px 5px #000000;
+  background-size: cover;
+}
+
+.cv {
+  color: var(--Grell);
+
+}
+.cv, .projectsList {
+  font-size: 2em;
+  line-height: 1.7em;
+}
+.projects {
+  background: var(--Grell);
+  color: var(--Black);
+  box-shadow: 5px 5px 15px 5px #000000;
+  text-align: center;
+} 
