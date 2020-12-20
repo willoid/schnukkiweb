@@ -21,17 +21,34 @@
       href="https://fonts.googleapis.com/css2?family=Assistant&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="grid-container">
-      <div class="Navbar">
+    <header class="grid-container">
+      <nav class="Navbar">
+        <div class="NavBtn">
+          <div class="NavBtnBtn"><i class="fas fa-angle-right"></i></div>
+          <ul class="NavList">
+            <li><a href="#">Home</a></li>
+            <li><a href="#fi">Fiction</a></li>
+            <li><a href="#nonfi">Non Fiction</a></li>
+            <li><a href="#vita">Vita</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Impressum</a></li>
+          </ul>
+        </div>
         <div class="NavbarBg"></div>
-      </div>
-      <div class="Logo">
+    </nav>
+      <main class="Logo">
         <div class="LogoName">Björn Düseler</div>
         <div class="Sublogo">Kamera</div>
-      </div>
+      </main>
       <div class="Contact">
         <a class="contactBtn" href="#">
           <p>Kontakt</p>
@@ -44,10 +61,10 @@
         </div>
       </div>
       <div class="Filling"></div>
-    </div>
+    </header>
     <!-- second page -->
     <div class="portfolioTitle"><h1>Portfolio</h1></div>
-    <div class="galleryBoxContainer">
+    <main class="galleryBoxContainer">
       <div class="galleryBox" id="nonfi"></div>
       <div class="galleryDesc">
         <h1>Non Fiction Gallerie</h1>
@@ -61,8 +78,8 @@
           <p>Mehr erfahren</p>
         </a>
       </div>
-    </div>
-    <div class="galleryBoxContainer">
+    </main>
+    <main class="galleryBoxContainer">
       <div class="galleryDesc">
         <h1>Fiction Gallerie</h1>
         <p class="galleryTxt">
@@ -72,11 +89,11 @@
           damit du siehst wie es am ende wird.
         </p>
         <a class="contactBtn" href="#">
-            <p>Mehr erfahren</p>
-          </a>
+          <p>Mehr erfahren</p>
+        </a>
       </div>
       <div class="galleryBox" id="fi"></div>
-    </div>
+    </main>
     <!-- parallax -->
 
     <div class="parallax"></div>
@@ -84,33 +101,46 @@
     <!--third page-->
 
     <div class="vitaIntro" id="vita">
-        <h1>Vita</h1>   
+      <h1>Vita</h1>
     </div>
     <div class="vitaBox">
-        <div class="imgBox"></div>
-        <ul class="cv">
-            <li><p>2020-21 hat ne coole Website gekriegt</p></li>
-            <li><p>2019 war auf der Welt unterwegs</p></li>
-            <li><p>2018 megakrasser freelancer</p></li>
-            <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
-            <li><p>2016 hat macarons für sich entdeckt</p></li>
-            <li><p>2014 hat sein Abschlussprojekt</p></li>
-            <li><p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p></li>
-            <li><p>2010 gelernter Kamera</p></li>
+      <div class="imgBox"></div>
+      <ul class="cv">
+        <li><p>2020-21 hat ne coole Website gekriegt</p></li>
+        <li><p>2019 war auf der Welt unterwegs</p></li>
+        <li><p>2018 megakrasser freelancer</p></li>
+        <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
+        <li><p>2016 hat macarons für sich entdeckt</p></li>
+        <li><p>2014 hat sein Abschlussprojekt</p></li>
+        <li><p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p></li>
+        <li><p>2010 gelernter Kamera</p></li>
+        
+      </ul>
+      <div class="projects">
+        <h2>Coole Projekte</h2>
+        <ul class="projectsList">
+          <li><p>in Argentinien gedreht</p></li>
+          <li><p>Romantikfilm in Slovenien</p></li>
+          <li><p>Fußball in Düsseldorf</p></li>
+          <li><p>Doku in Hamburg</p></li>
+          <li><p>Comercial in Frankreich</p></li>
+          <li><p>Thriller gedreht</p></li>
+          <li><p>In den Südsee gedreht</p></li>
+          <li><p>Abschlussprojekt</p></li>
         </ul>
-        <div class="projects">
-            <h2>Coole Projekte</h2>
-            <ul class="projectsList">
-                <li><p>in Argentinien gedreht</p></li>
-                <li><p>Romantikfilm in Slovenien</p></li>
-                <li><p>Fußball in Düsseldorf</p></li>
-                <li><p>Doku in Hamburg</p></li>
-                <li><p>Comercial in Frankreich</p></li>
-                <li><p>Thriller gedreht</p></li>
-                <li><p>In den Südsee gedreht</p></li>
-                <li><p>Abschlussprojekt</p></li>
-            </ul>
-        </div>
+      </div>
     </div>
+
+    <!--footer-->
+<footer>
+    <div class="impressum" id="impressum"><h1>Impressum<br>&amp<br>Kontakt</h1></div>
+  <div class="impressum_content"><p>verantwortlich für den Inhalt diese Seite und Urheberrechtinhaber der Medien ist Björn. <br>Berliner Str. 13 12345 Berlin <br>bjorn@came.ra</p></div>
+  <div class="contactInfo">
+    <a class="contactBtn" href="#">
+        <p>Kontakt</p>
+      </a>
+  </div>
+</footer>
+
   </body>
 </html>

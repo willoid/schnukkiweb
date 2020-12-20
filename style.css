@@ -25,7 +25,6 @@ h1 {
   color: var(--Grell);
   font-size: 5rem;
   font-weight: 100;
-  
 }
 
 h2 {
@@ -48,6 +47,97 @@ h2 {
     "Navbar toGallery toGallery toGallery toGallery"
     "Navbar Filling Filling Filling Filling";
 }
+
+/*Navigation Menu*/
+.NavBtn {
+  width: 2.5em;
+  height: 20em;
+  position: fixed;
+  top: calc(50vh - 10em);
+  left: 0;
+  color: transparent;
+  background: transparent;
+}
+
+/* @keyframes visibleBtn {
+  from {opacity: 0;}
+  50% { opacity : 0;}
+  to {opacity: 1;}
+} */
+
+.NavBtn:hover > .NavBtnBtn {
+  opacity: 0;
+}
+.NavBtnBtn {
+  background-color: rgba(80, 87, 80, 0.4);
+  color: var(--Grell);
+  z-index: 1;
+  width: 2.5em;
+  height: 20em;
+  position: fixed;
+  top: calc(50vh - 10em);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.5s ease-out;
+  box-shadow: 8px 5px 15px 5px #000000;
+}
+
+.NavBtnBtn > i {
+  font-size: 5em;
+  color: var(--Grell);
+}
+.NavBtn > ul {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: calc(50vh - 25em);
+  left: 0;
+  list-style-type: none;
+  width: 10em;
+  height: 48em;
+  background-color: rgba(80, 87, 80, 0.65);
+
+  transform: translateX(-10em);
+  transition: all 1s ease-in;
+}
+.NavBtn:hover > ul {
+  box-shadow: 2px 5px 15px 5px #000000;
+  transform: translateX(0);
+  transition: all 1s ease-out;
+}
+
+.NavList > li {
+  width: 100%;
+  height: 5em;
+  font-family: var(--btnFont);
+  font-weight: 50;
+  font-size: 1.6em;
+}
+
+.NavList > li:hover {
+  background: var(--Grell);
+  transition: 1s ease-out all;
+}
+
+li > a {
+  display: block;
+  height: 100%;
+  text-align: center;
+  padding-top: 2em;
+  text-decoration: none;
+  color: var(--Grell);
+}
+
+li:hover > a {
+  color: var(--Black);
+  transition: 1s ease-out all;
+}
+
+
+
+/*Landing Page Background*/
 .Navbar {
   grid-area: Navbar;
   height: 80vh;
@@ -83,9 +173,10 @@ h2 {
   text-align: center;
 }
 
-/*Kontakt-button*/
+/*Kontakt-button in header & footer*/
 
-.Contact {
+.Contact,
+.contactInfo {
   grid-area: Contact;
   background-color: var(--Black);
   display: flex;
@@ -109,7 +200,6 @@ h2 {
   text-decoration: none;
   transition: 0.9s ease-out all;
 }
-
 
 .contactBtn:hover {
   cursor: pointer;
@@ -153,16 +243,17 @@ h2 {
 }
 
 .nonFiction {
-  background-color: rgba(24, 24, 23, 0.8);
-  backdrop-filter: blur(20px);
-  color: var(--White);
+  background-color: rgba(24, 24, 23, 0.6);
+  color: var(--Grell);
 }
+/*Decided to take the white color of the 
+title instead of the beige because it matches 
+better the bg of the photo but change it to 
+match björns photo */
 
 .Fiction {
-  background: transparent;
+  background-color: rgba(232, 237, 223, 0.6);
   color: var(--Black);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
 }
 
 .Filling {
@@ -178,7 +269,8 @@ h2 {
   margin-top: 2em;
 }
 
-.galleryBoxContainer, .vitaBox{
+.galleryBoxContainer,
+.vitaBox {
   padding: 4em;
   display: flex;
   flex-direction: row;
@@ -209,7 +301,6 @@ h2 {
   line-height: 3rem;
 }
 
-
 /*parallax*/
 
 .parallax {
@@ -219,22 +310,24 @@ h2 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
 }
 
 /*Vita*/
 
-.vitaIntro {margin-top: 2em;
-text-align: center;}
+.vitaIntro {
+  margin-top: 2em;
+  text-align: center;
+}
 
 /*4em padding*/
 
-
-.imgBox, .cv, .projects {
+.imgBox,
+.cv,
+.projects {
   width: calc(33vw - 7em);
   height: 80vh;
   margin: 0 2em 0 2em;
-
 }
 
 .imgBox {
@@ -245,10 +338,10 @@ text-align: center;}
 
 .cv {
   color: var(--Grell);
-
 }
-.cv, .projectsList {
-  font-size: 2em;
+.cv,
+.projectsList {
+  font-size: 2rem;
   line-height: 1.7em;
 }
 .projects {
@@ -256,4 +349,37 @@ text-align: center;}
   color: var(--Black);
   box-shadow: 5px 5px 15px 5px #000000;
   text-align: center;
-} 
+}
+
+/*footer*/
+
+footer {
+  width: 100vw;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "impressum impressum_content contactInfo";
+}
+
+.impressum {
+  grid-area: impressum;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.impressum_content {
+  grid-area: impressum_content;
+  background: var(--Grell);
+  margin: 4em 2em;
+  box-shadow: 5px 5px 15px 5px #000000;
+  color: var(--Black);
+  font-family: var(--paragraphFont);
+  line-height: 1.7em;
+  font-size: 2rem;
+  padding: 2em;
+}
+.contactInfo {
+  grid-area: contactInfo;
+}
