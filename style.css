@@ -355,12 +355,13 @@ match björns photo */
 
 footer {
   width: 100vw;
-  height: 70vh;
+  height:70vh;
   display: grid;
   grid-template-columns: 1fr 1.5fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: "impressum impressum_content contactInfo";
+  margin-top: 10vh;
 }
 
 .impressum {
