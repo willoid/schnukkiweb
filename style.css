@@ -1,14 +1,18 @@
+/*z-index list: 1 navBtn für handy  2 contactModal*/
+
+
 :root {
   --White: #e8eddf;
   --Grell: #cfdbd5;
   --Yellow: #f5cb5c;
   --Black: #242423;
   --Grey: #333533;
-  --logoFont: 'Oswald', sans-serif;
+  --logoFont: "Oswald", sans-serif;
   --titleFont: "Staatliches", cursive;
   --btnFont: "Bebas Neue", cursive;
   --paragraphFont: "Assistant", sans-serif;
   --btnHeight: 1.6em;
+  --shadow: 5px 5px 15px 5px #000000;
 }
 
 * {
@@ -37,11 +41,11 @@ h2 {
 /*bc of navigation bar*/
 section {
   padding-top: 12vh;
-  margin-top: 1em; 
+  margin-top: 1em;
 }
 
 @media only screen and (max-width: 600px) {
-  .NavBtn {
+  nav {
     width: 2.5em;
     height: 20em;
     position: fixed;
@@ -51,10 +55,10 @@ section {
     background: transparent;
   }
 
-  .NavBtn:hover > .NavBtnBtn {
+  nav:hover > .navBtn {
     opacity: 0;
   }
-  .NavBtnBtn {
+  .navBtn {
     background-color: rgba(80, 87, 80, 0.4);
     color: var(--Grell);
     z-index: 1;
@@ -67,14 +71,14 @@ section {
     align-items: center;
     justify-content: center;
     transition: all 1.5s ease-out;
-    box-shadow: 8px 5px 15px 5px #000000;
+    box-shadow: var(--shadow);
   }
 
-  .NavBtnBtn > i {
+  .navBtn > i {
     font-size: 5em;
     color: var(--Grell);
   }
-  .NavBtn > ul {
+  nav > ul {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -88,13 +92,13 @@ section {
     transform: translateX(-10em);
     transition: all 1s ease-in;
   }
-  .NavBtn:hover > ul {
-    box-shadow: 2px 5px 15px 5px #000000;
+  nav:hover > ul {
+    box-shadow: var(--shadow);
     transform: translateX(0);
     transition: all 1s ease-out;
   }
 
-  .NavList > li {
+  .navList > li {
     width: 100%;
     height: 5em;
     font-family: var(--btnFont);
@@ -102,7 +106,7 @@ section {
     font-size: 1.6em;
   }
 
-  .NavList > li:hover {
+  .navList > li:hover {
     background: var(--Grell);
     transition: 1s ease-out all;
   }
@@ -122,53 +126,36 @@ section {
   }
 }
 
-
-
 /*Navigation Menu*/
-.NavBtn {
-  width: 100vw;
-  /*bc of 10vh there should be a margin of 10vh in every section*/
-  height: 10vh;
-  position: absolute;
-  position: fixed;
-  top: 0;
-  left: 0;
-  color: transparent;
-  background: transparent;
-}
 
 /*desktop version is hidden - only handy/tablet*/
-.NavBtnBtn > i {
+.navBtnBtn > i {
   display: none;
 }
-.NavBtn > ul {
+.navList {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   list-style-type: none;
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   background-color: rgba(80, 87, 80, 0.65);
   backdrop-filter: blur(10px);
-  box-shadow: 8px 5px 15px 5px #000000;
+  box-shadow: var(--shadow);
   transition: all 1s ease-in;
 }
-.NavBtn:hover > ul {
-  box-shadow: 2px 5px 15px 5px #000000;
-  transform: translateX(0);
-  transition: all 1s ease-out;
-}
 
-.NavList > li {
-  width: 100%;
+.navList > li {
+  width: 15vw;
   font-family: var(--btnFont);
   font-weight: 50;
   font-size: 1.6em;
 }
 
-.NavList > li:hover {
+.navList > li:hover {
   background: var(--Grell);
   transition: 1s ease-out all;
 }
@@ -187,29 +174,26 @@ li:hover > a {
   transition: 1s ease-out all;
 }
 
-
 /*Landing page*/
 .landing {
-    
   width: 100%;
   height: 100vh;
   padding: 12vh 4em 0 4em;
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 10fr 10fr 0.5fr;
   grid-template-areas:
     "bg logo"
     "bg contact"
-    "neon neon"
-    
+    "neon neon";
 }
 
 /*Landing Page Background*/
 
 /*changed style apres Bjorns wish but commented out good idea*/
 .bg {
-  grid-area:bg;
-    /*original design had a overflown BG that was shown in a button element also as BG*/
+  grid-area: bg;
+  /*original design had a overflown BG that was shown in a button element also as BG*/
   /* width: calc(50vw + 16em); */
   width: calc(50vw -4em);
   height: calc(88vh - 6em);
@@ -223,12 +207,9 @@ li:hover > a {
 
 /*Logo*/
 .logo {
-    
   grid-area: logo;
   width: calc(50vw - 4em);
   background-color: var(--Black);
-
- 
 }
 .LogoName {
   font-family: var(--logoFont);
@@ -236,7 +217,6 @@ li:hover > a {
   text-transform: uppercase;
   color: var(--White);
   text-align: center;
-
 }
 .Sublogo {
   font-family: var(--titleFont);
@@ -255,7 +235,7 @@ li:hover > a {
   margin-top: 5vh;
 }
 
-.contactBtn{
+.contactBtn {
   width: 100%;
   max-width: 7em;
   height: var(--btnHeight);
@@ -269,6 +249,7 @@ li:hover > a {
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.9s ease-out all;
+  
 }
 
 .contactBtn:hover {
@@ -279,38 +260,106 @@ li:hover > a {
   transition: 0.9s ease-out all;
 }
 
+#contactModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s linear;
+}
+
+
+/*when classList is added*/
+#contactModal.show {
+  visibility: visible;
+  opacity: 1;
+  animation: showModal 1s ease-out;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.contactBox {
+  position: relative;
+  width:40em;
+  height: 30em;
+  background-color: var(--Grell);
+  top: calc(50vh - 15em);
+  left: calc(50vw - 20em);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.contactBox > button {
+  width: 3em;
+  height: 3em;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--Black);
+  border: var(--Black) solid 1px;
+  position: absolute;
+  top: 0;
+  /*right: 0 doesnt work*/
+  left: calc(100% - 3em);
+  transition: background 1s ease-in-out;
+}
+
+.contactBox > button:hover {
+  background: var(--Yellow);
+  transition: background 1s ease-in-out;
+}
+
+.contactBox > span {
+  font-family: var(--paragraphFont);
+  font-size: 2rem;
+  display: block;
+  margin: 0.5em;
+}
 /*Neon pulse on the bottom*/
 .neon {
   grid-area: neon;
   width: 100%;
-  height: 2vh;
-  box-shadow: 0em 0em 0em 0px rgba(255, 255, 255, 0);
+  height: 5vh;
+  box-shadow: 0em 0px 0px 0px rgba(0, 0, 0, 0);
   position: fixed;
   top: 100%;
+  left: 0;
   transition: all 1s ease-in-out;
 }
 
-
 .landing:hover > .neon {
-  
-  animation: pulse 2s infinite; 
-  
+  animation: pulse 3s infinite;
 }
 
 @keyframes pulse {
   0% {
-   	box-shadow: -1em 0em 4em 3px rgba(255, 255, 255, 1);
-	}
+    box-shadow: 0em -5px 15px 5px rgba(0, 0, 0, 1);
+  }
 
-	70% {
-     box-shadow: -1em 0em 2em 3px rgba(255, 255, 255, 0.5);
-	}
+  70% {
+    box-shadow: 0em -10px 25px 6px rgba(0, 0, 0, 1);
+  }
 
-	100% {
-   	box-shadow: -1em 0em 4em 3px rgba(255, 255, 255, 1);
-	}
-
+  100% {
+    box-shadow: 0em -5px 15px 5px rgba(0, 0, 0, 1);
+  }
 }
+
 /* 
 .GalleryContainer {
 
@@ -355,10 +404,10 @@ li:hover > a {
   background-color: var(--Black);
 }*/
 
-/*Galleries & Vitac */
+/*Galleries & Vita */
 
-.galleryBoxContainer, .vita
- {
+.galleryBoxContainer,
+.vita {
   /*width 100vw overflows*/
   width: 100%;
   padding-left: 4em;
@@ -371,12 +420,12 @@ li:hover > a {
   width: calc(70% - 4em);
   height: 65vh;
   background-color: var(--Grell);
-  box-shadow: inset -5px 5px 10px 4px rgba(0,0,0,0.7);
+  box-shadow: inset -5px 5px 10px 4px rgba(0, 0, 0, 0.7);
 }
 /*fiction Gallery must have the shadow the oder way around*/
 
 #fiBox {
-  box-shadow: inset 5px 5px 10px 4px rgba(0,0,0,0.6);
+  box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.6);
 }
 
 .galleryDesc {
@@ -395,7 +444,7 @@ li:hover > a {
 /*parallax*/
 
 .parallax {
- /*width 100vw overflows*/
+  /*width 100vw overflows*/
   width: 100%;
   height: 40vh;
   background-image: url(./assets/parallax.JPG);
@@ -408,7 +457,6 @@ li:hover > a {
 
 /*Vita*/
 
-
 /*vita has 4em padding + 4em margin*/
 .vitaContainer {
   width: calc (60vw - 8em);
@@ -418,14 +466,12 @@ li:hover > a {
   align-items: center;
 }
 
-
 .imgBox {
   width: calc(40vw - 8em);
   margin-right: 10vw;
   background-image: url(./assets/vita.JPG);
-  box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: var(--shadow);
   background-size: cover;
-
 }
 
 .cv {
@@ -435,11 +481,9 @@ li:hover > a {
   line-height: 1.7em;
 }
 
-
 /*footer*/
 
 footer {
-
   width: 99vw;
   height: 70vh;
   display: grid;
@@ -460,11 +504,10 @@ footer {
   grid-area: impressum_content;
   background: var(--Grell);
   margin: 4em 4em;
-  box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: var(--shadow);
   color: var(--Black);
   font-family: var(--paragraphFont);
   line-height: 1.7em;
   font-size: 2rem;
   padding: 2em;
 }
-

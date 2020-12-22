@@ -27,18 +27,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <nav class="Navbar">
-        <div class="NavBtn">
-          <div class="NavBtnBtn"><i class="fas fa-angle-right"></i></div>
-          <ul class="NavList">
+      <nav>
+        <!--class NavBtn is for media query-->
+          <div class="navBtn"><i class="fas fa-angle-right"></i></div>
+          <ul class="navList">
             <li><a href="#">Home</a></li>
             <li><a href="#fi">Fiction</a></li>
             <li><a href="#nonfi">Non Fiction</a></li>
             <li><a href="#vita">Vita</a></li>
-            <li><a href="#impressum">Kontakt</a></li>
-            <li><a href="#impressum">Impressum</a></li>
           </ul>
-        </div>
       </nav>
     <div class="landing">
       <aside class="bg"></aside>
@@ -47,9 +44,17 @@
         <div class="Sublogo">Kamera</div>
       </header>
       <main class="contact">
-        <a class="contactBtn" href="#">
+        <a class="contactBtn" onclick="showContact()">
           <p>Kontakt</p>
         </a>
+        <div id="contactModal">
+          <div class="contactBox">
+            <button onclick="closeContact()">x</button>
+            <h2>Kontakt-Info:</h2>
+            <span><i class="fas fa-envelope"></i> camera@bjorn.de</span>
+            <span><i class="fas fa-phone"></i> 0123 456789</span>
+          </div>
+        </div>
       </main>
       <aside class="neon"></aside>
 
@@ -73,7 +78,7 @@
           ich schreibe einfach ein paar linien mehr <br />
           damit du siehst wie es am ende wird.
         </p>
-        <a class="contactBtn" href="#">
+        <a class="contactBtn" onclick="showContact()">
           <p>Kontakt</p>
         </a>
       </div>
@@ -89,14 +94,14 @@
           ich schreibe einfach ein paar linien mehr <br />
           damit du siehst wie es am ende wird.
         </p>
-        <a class="contactBtn" href="#vita">
+        <a class="contactBtn" onclick="showContact()">
           <p>Kontakt</p>
         </a>
       </div>
     </section>
     <!-- parallax -->
 
-    <div class="parallax"></div>
+    <aside class="parallax"></aside>
 
     <!--third page-->
 
@@ -109,7 +114,7 @@
           <li><p>2019 war auf der Welt unterwegs</p></li>
           <li><p>2018 megakrasser freelancer</p></li>
           <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
-          <li><p>2016 hat macarons für sich entdeckt</p></li>
+          <li><p>2016 war fleißig unterwegs</p></li>
           <li><p>2014 hat sein Abschlussprojekt</p></li>
           <li>
             <p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p>
@@ -132,5 +137,6 @@
         </p>
       </div>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
