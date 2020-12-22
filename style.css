@@ -122,25 +122,14 @@ section {
   }
 }
 
-/*Landing page*/
-.grid-container {
-  width: 99vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "Navbar Logo"
-    "Navbar Contact"
-    
-}
+
 
 /*Navigation Menu*/
 .NavBtn {
   width: 100vw;
   /*bc of 10vh there should be a margin of 10vh in every section*/
   height: 10vh;
+  position: absolute;
   position: fixed;
   top: 0;
   left: 0;
@@ -198,19 +187,31 @@ li:hover > a {
   transition: 1s ease-out all;
 }
 
-/*Landing Page Background*/
-.Navbar {
-  grid-area: Navbar;
-  height: 80vh;
-  padding: 4em 0 2em 4em;
+
+/*Landing page*/
+.grid-container {
+    
+  width: 100%;
+  height: 100vh;
+  padding: 12vh 4em 0 4em;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 10fr 10fr 0.5fr;
+  grid-template-areas:
+    "bg logo"
+    "bg contact"
+    "neon neon"
+    
 }
 
+/*Landing Page Background*/
+
 /*changed style apres Bjorns wish but commented out good idea*/
-.NavbarBg {
-  margin-top: 3em;
-  /*original design had a overflown BG that was shown in a button element also as BG*/
+.bg {
+  grid-area:bg;
+    /*original design had a overflown BG that was shown in a button element also as BG*/
   /* width: calc(50vw + 16em); */
-   width: calc(50vw -4em);
+  width: calc(50vw -4em);
   height: calc(88vh - 6em);
   background-image: url(./assets/bjoern_ttl.jpeg);
   background-size: cover;
@@ -221,10 +222,10 @@ li:hover > a {
 }
 
 /*Logo*/
-.Logo {
-  /*hier*/
+.logo {
+    
+  grid-area: logo;
   width: calc(50vw - 4em);
-  grid-area: Logo;
   background-color: var(--Black);
   margin-top: 5vh;
  
@@ -246,8 +247,8 @@ li:hover > a {
 
 /*Kontakt-button in header & footer*/
 
-.Contact {
-  grid-area: Contact;
+.contact {
+  grid-area: contact;
   width: calc(50vw - 4em);
   display: flex;
   justify-content: center;
@@ -278,6 +279,38 @@ li:hover > a {
   transition: 0.9s ease-out all;
 }
 
+/*Neon pulse on the bottom*/
+.neon {
+  grid-area: neon;
+  width: 100%;
+  height: 2vh;
+  box-shadow: 0em 0em 0em 0px rgba(255, 255, 255, 0);
+  position: fixed;
+  top: 100%;
+  transition: all 1s ease-in-out;
+}
+
+
+.grid-container:hover > .neon {
+  
+  animation: pulse 2s infinite; 
+  
+}
+
+@keyframes pulse {
+  0% {
+   	box-shadow: -1em 0em 4em 3px rgba(255, 255, 255, 1);
+	}
+
+	70% {
+     box-shadow: -1em 0em 2em 3px rgba(255, 255, 255, 0.5);
+	}
+
+	100% {
+   	box-shadow: -1em 0em 4em 3px rgba(255, 255, 255, 1);
+	}
+
+}
 /* 
 .GalleryContainer {
 
