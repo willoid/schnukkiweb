@@ -4,7 +4,7 @@
   --Yellow: #f5cb5c;
   --Black: #242423;
   --Grey: #333533;
-  --logoFont: "Bahiana", cursive;
+  --logoFont: 'Oswald', sans-serif;
   --titleFont: "Staatliches", cursive;
   --btnFont: "Bebas Neue", cursive;
   --paragraphFont: "Assistant", sans-serif;
@@ -34,72 +34,136 @@ h2 {
   font-weight: 100;
   padding: 1em 0;
 }
+/*bc of navigation bar*/
+section {
+  padding-top: 12vh;
+  margin-top: 1em; 
+}
+
+@media only screen and (max-width: 600px) {
+  .NavBtn {
+    width: 2.5em;
+    height: 20em;
+    position: fixed;
+    top: calc(50vh - 10em);
+    left: 0;
+    color: transparent;
+    background: transparent;
+  }
+
+  .NavBtn:hover > .NavBtnBtn {
+    opacity: 0;
+  }
+  .NavBtnBtn {
+    background-color: rgba(80, 87, 80, 0.4);
+    color: var(--Grell);
+    z-index: 1;
+    width: 2.5em;
+    height: 20em;
+    position: fixed;
+    top: calc(50vh - 10em);
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.5s ease-out;
+    box-shadow: 8px 5px 15px 5px #000000;
+  }
+
+  .NavBtnBtn > i {
+    font-size: 5em;
+    color: var(--Grell);
+  }
+  .NavBtn > ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: calc(50vh - 25em);
+    left: 0;
+    list-style-type: none;
+    width: 10em;
+    height: 48em;
+    background-color: rgba(80, 87, 80, 0.65);
+
+    transform: translateX(-10em);
+    transition: all 1s ease-in;
+  }
+  .NavBtn:hover > ul {
+    box-shadow: 2px 5px 15px 5px #000000;
+    transform: translateX(0);
+    transition: all 1s ease-out;
+  }
+
+  .NavList > li {
+    width: 100%;
+    height: 5em;
+    font-family: var(--btnFont);
+    font-weight: 50;
+    font-size: 1.6em;
+  }
+
+  .NavList > li:hover {
+    background: var(--Grell);
+    transition: 1s ease-out all;
+  }
+
+  li > a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    padding-top: 2em;
+    text-decoration: none;
+    color: var(--Grell);
+  }
+
+  li:hover > a {
+    color: var(--Black);
+    transition: 1s ease-out all;
+  }
+}
+
 /*Landing page*/
 .grid-container {
-  height: 80vh;
+  width: 99vw;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2fr 1.3fr 0.8fr 0.4fr;
+  grid-template-columns: 1fr 1fr ;
+  grid-template-rows: 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "Navbar Logo Logo Logo Logo"
-    "Navbar Contact Contact Contact Contact"
-    "Navbar toGallery toGallery toGallery toGallery"
-    "Navbar Filling Filling Filling Filling";
+    "Navbar Logo"
+    "Navbar Contact"
+    
 }
 
 /*Navigation Menu*/
 .NavBtn {
-  width: 2.5em;
-  height: 20em;
+  width: 100vw;
+  /*bc of 10vh there should be a margin of 10vh in every section*/
+  height: 10vh;
   position: fixed;
-  top: calc(50vh - 10em);
+  top: 0;
   left: 0;
   color: transparent;
   background: transparent;
 }
 
-/* @keyframes visibleBtn {
-  from {opacity: 0;}
-  50% { opacity : 0;}
-  to {opacity: 1;}
-} */
-
-.NavBtn:hover > .NavBtnBtn {
-  opacity: 0;
-}
-.NavBtnBtn {
-  background-color: rgba(80, 87, 80, 0.4);
-  color: var(--Grell);
-  z-index: 1;
-  width: 2.5em;
-  height: 20em;
-  position: fixed;
-  top: calc(50vh - 10em);
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 1.5s ease-out;
-  box-shadow: 8px 5px 15px 5px #000000;
-}
-
+/*desktop version is hidden - only handy/tablet*/
 .NavBtnBtn > i {
-  font-size: 5em;
-  color: var(--Grell);
+  display: none;
 }
 .NavBtn > ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: fixed;
-  top: calc(50vh - 25em);
+  top: 0;
   left: 0;
   list-style-type: none;
-  width: 10em;
-  height: 48em;
+  width: 100vw;
+  height: 10vh;
   background-color: rgba(80, 87, 80, 0.65);
-
-  transform: translateX(-10em);
+  backdrop-filter: blur(10px);
+  box-shadow: 8px 5px 15px 5px #000000;
   transition: all 1s ease-in;
 }
 .NavBtn:hover > ul {
@@ -110,7 +174,6 @@ h2 {
 
 .NavList > li {
   width: 100%;
-  height: 5em;
   font-family: var(--btnFont);
   font-weight: 50;
   font-size: 1.6em;
@@ -125,7 +188,7 @@ li > a {
   display: block;
   height: 100%;
   text-align: center;
-  padding-top: 2em;
+  padding-top: 1.2em;
   text-decoration: none;
   color: var(--Grell);
 }
@@ -135,33 +198,41 @@ li:hover > a {
   transition: 1s ease-out all;
 }
 
-
-
 /*Landing Page Background*/
 .Navbar {
   grid-area: Navbar;
   height: 80vh;
   padding: 4em 0 2em 4em;
 }
+
+/*changed style apres Bjorns wish but commented out good idea*/
 .NavbarBg {
-  width: calc(50vw + 16em);
-  height: calc(80vh - 6em);
-  background-image: url(https://images.pexels.com/photos/4914352/pexels-photo-4914352.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  margin-top: 3em;
+  /*original design had a overflown BG that was shown in a button element also as BG*/
+  /* width: calc(50vw + 16em); */
+   width: calc(50vw -4em);
+  height: calc(88vh - 6em);
+  background-image: url(./assets/bjoern_ttl.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -10;
-  position: absolute;
+  /*added z-index para sobreponer logo en el titulo pero ya no hace falta*/
+  /*  z-index: -10; */
+  /* position: absolute; */
 }
 
 /*Logo*/
 .Logo {
-  width: 50vw;
+  /*hier*/
+  width: calc(50vw - 4em);
   grid-area: Logo;
   background-color: var(--Black);
+  margin-top: 5vh;
+ 
 }
 .LogoName {
   font-family: var(--logoFont);
-  font-size: 10rem;
+  font-size: 8rem;
+  text-transform: uppercase;
   color: var(--White);
   text-align: center;
   padding-top: 1em;
@@ -175,17 +246,15 @@ li:hover > a {
 
 /*Kontakt-button in header & footer*/
 
-.Contact,
-.contactInfo {
+.Contact {
   grid-area: Contact;
-  background-color: var(--Black);
+  width: calc(50vw - 4em);
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-flow: column;
+  margin-top: 15vh;
 }
 
-.contactBtn {
+.contactBtn{
   width: 100%;
   max-width: 7em;
   height: var(--btnHeight);
@@ -209,15 +278,10 @@ li:hover > a {
   transition: 0.9s ease-out all;
 }
 
-/*Btns zur Gallery*/
+/* 
+.GalleryContainer {
 
-.toGallery {
-  grid-area: toGallery;
-  background-color: transparent;
-}
-
-.galleryContainer {
-  width: 40em;
+  width: 20em;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -240,16 +304,13 @@ li:hover > a {
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.9s ease-out all;
-}
+} 
 
 .nonFiction {
   background-color: rgba(24, 24, 23, 0.6);
   color: var(--Grell);
 }
-/*Decided to take the white color of the 
-title instead of the beige because it matches 
-better the bg of the photo but change it to 
-match björns photo */
+ 
 
 .Fiction {
   background-color: rgba(232, 237, 223, 0.6);
@@ -259,19 +320,16 @@ match björns photo */
 .Filling {
   grid-area: Filling;
   background-color: var(--Black);
-}
+}*/
 
-/*Portfolio */
-.portfolioTitle {
-  text-align: center;
-  width: 100vw;
-  height: 15vh;
-  margin-top: 2em;
-}
+/*Galleries & Vitac */
 
-.galleryBoxContainer,
-.vitaBox {
-  padding: 4em;
+.galleryBoxContainer, .vita
+ {
+  /*width 100vw overflows*/
+  width: 100%;
+  padding-left: 4em;
+  padding-right: 4em;
   display: flex;
   flex-direction: row;
 }
@@ -280,17 +338,17 @@ match björns photo */
   width: calc(70% - 4em);
   height: 65vh;
   background-color: var(--Grell);
-  box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: inset -5px 5px 10px 4px rgba(0,0,0,0.7);
 }
 /*fiction Gallery must have the shadow the oder way around*/
 
-#fi {
-  box-shadow: -5px 5px 15px 5px #000000;
+#fiBox {
+  box-shadow: inset 5px 5px 10px 4px rgba(0,0,0,0.6);
 }
 
 .galleryDesc {
-  width: calc (30% - 18em);
-  margin: 0 5em 0 5em;
+  width: calc (30% - 14em);
+  margin: 0 5em;
   display: grid;
 }
 
@@ -304,63 +362,58 @@ match björns photo */
 /*parallax*/
 
 .parallax {
-  width: 100vw;
+ /*width 100vw overflows*/
+  width: 100%;
   height: 40vh;
-  background-image: url("https://images.pexels.com/photos/2851474/pexels-photo-2851474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url(./assets/parallax.JPG);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 25vh;
 }
 
 /*Vita*/
 
-.vitaIntro {
-  margin-top: 2em;
-  text-align: center;
-}
 
-/*4em padding*/
-
-.imgBox,
-.cv,
-.projects {
-  width: calc(33vw - 7em);
+/*vita has 4em padding + 4em margin*/
+.vitaContainer {
+  width: calc (60vw - 8em);
   height: 80vh;
-  margin: 0 2em 0 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 .imgBox {
-  background-image: url("https://images.pexels.com/photos/381843/pexels-photo-381843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  width: calc(40vw - 8em);
+  margin-right: 10vw;
+  background-image: url(./assets/vita.JPG);
   box-shadow: 5px 5px 15px 5px #000000;
   background-size: cover;
+
 }
 
 .cv {
+  margin-top: 5vw;
   color: var(--Grell);
-}
-.cv,
-.projectsList {
   font-size: 2rem;
   line-height: 1.7em;
 }
-.projects {
-  background: var(--Grell);
-  color: var(--Black);
-  box-shadow: 5px 5px 15px 5px #000000;
-  text-align: center;
-}
+
 
 /*footer*/
 
 footer {
-  width: 100vw;
-  height:70vh;
+
+  width: 99vw;
+  height: 70vh;
   display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "impressum impressum_content contactInfo";
+  grid-template-areas: "impressum impressum_content ";
   margin-top: 10vh;
 }
 
@@ -373,7 +426,7 @@ footer {
 .impressum_content {
   grid-area: impressum_content;
   background: var(--Grell);
-  margin: 4em 2em;
+  margin: 4em 4em;
   box-shadow: 5px 5px 15px 5px #000000;
   color: var(--Black);
   font-family: var(--paragraphFont);
@@ -381,6 +434,4 @@ footer {
   font-size: 2rem;
   padding: 2em;
 }
-.contactInfo {
-  grid-area: contactInfo;
-}
+

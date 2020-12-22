@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Björn Düseler</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bahiana&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
       rel="stylesheet"
@@ -30,7 +27,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="grid-container">
+    <div class="grid-container">
       <nav class="Navbar">
         <div class="NavBtn">
           <div class="NavBtnBtn"><i class="fas fa-angle-right"></i></div>
@@ -39,47 +36,34 @@
             <li><a href="#fi">Fiction</a></li>
             <li><a href="#nonfi">Non Fiction</a></li>
             <li><a href="#vita">Vita</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="#">Impressum</a></li>
+            <li><a href="#impressum">Kontakt</a></li>
+            <li><a href="#impressum">Impressum</a></li>
           </ul>
         </div>
         <div class="NavbarBg"></div>
-    </nav>
-      <main class="Logo">
+      </nav>
+      <header class="Logo">
         <div class="LogoName">Björn Düseler</div>
         <div class="Sublogo">Kamera</div>
-      </main>
+      </header>
       <div class="Contact">
         <a class="contactBtn" href="#">
           <p>Kontakt</p>
         </a>
       </div>
-      <div class="toGallery">
-        <div class="galleryContainer">
+
+      <!-- removed upon Björns wish but acually a nice idea:
+        <div class="toGallery">
+          <div class="galleryContainer">
           <a class="nonFiction" href="#nonfi"><p>Non Fiction</p></a>
           <a class="Fiction" href="#fi"><p>Fiction</p></a>
-        </div>
-      </div>
-      <div class="Filling"></div>
-    </header>
+           </div>
+        </div> 
+      <div class="Filling"></div>-->
+    </div>
     <!-- second page -->
-    <div class="portfolioTitle"><h1>Portfolio</h1></div>
-    <main class="galleryBoxContainer">
-      <div class="galleryBox" id="nonfi"></div>
-      <div class="galleryDesc">
-        <h1>Non Fiction Gallerie</h1>
-        <p class="galleryTxt">
-          Hier kannst du beschreiben was in den Kästchen gesehen wird.<br />
-          Zum Beispiel: wer deine kunde sind oder wo du dich besser fühlst.<br />
-          ich schreibe einfach ein paar linien mehr <br />
-          damit du siehst wie es am ende wird.
-        </p>
-        <a class="contactBtn" href="#vita">
-          <p>Mehr erfahren</p>
-        </a>
-      </div>
-    </main>
-    <main class="galleryBoxContainer">
+
+    <section class="galleryBoxContainer" id="fi">
       <div class="galleryDesc">
         <h1>Fiction Gallerie</h1>
         <p class="galleryTxt">
@@ -89,58 +73,63 @@
           damit du siehst wie es am ende wird.
         </p>
         <a class="contactBtn" href="#">
-          <p>Mehr erfahren</p>
+          <p>Kontakt</p>
         </a>
       </div>
-      <div class="galleryBox" id="fi"></div>
-    </main>
+      <div class="galleryBox" id="fiBox"></div>
+    </section>
+    <section class="galleryBoxContainer" id="nonfi">
+      <div class="galleryBox" id="nonfiBox"></div>
+      <div class="galleryDesc">
+        <h1>Non Fiction Gallerie</h1>
+        <p class="galleryTxt">
+          Hier kannst du beschreiben was in den Kästchen gesehen wird.<br />
+          Zum Beispiel: wer deine kunde sind oder wo du dich besser fühlst.<br />
+          ich schreibe einfach ein paar linien mehr <br />
+          damit du siehst wie es am ende wird.
+        </p>
+        <a class="contactBtn" href="#vita">
+          <p>Kontakt</p>
+        </a>
+      </div>
+    </section>
     <!-- parallax -->
 
     <div class="parallax"></div>
 
     <!--third page-->
 
-    <div class="vitaIntro" id="vita">
-      <h1>Vita</h1>
-    </div>
-    <div class="vitaBox">
+    <section class="vita" id="vita">
       <div class="imgBox"></div>
-      <ul class="cv">
-        <li><p>2020-21 hat ne coole Website gekriegt</p></li>
-        <li><p>2019 war auf der Welt unterwegs</p></li>
-        <li><p>2018 megakrasser freelancer</p></li>
-        <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
-        <li><p>2016 hat macarons für sich entdeckt</p></li>
-        <li><p>2014 hat sein Abschlussprojekt</p></li>
-        <li><p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p></li>
-        <li><p>2010 gelernter Kamera</p></li>
-        
-      </ul>
-      <div class="projects">
-        <h2>Coole Projekte</h2>
-        <ul class="projectsList">
-          <li><p>in Argentinien gedreht</p></li>
-          <li><p>Romantikfilm in Slovenien</p></li>
-          <li><p>Fußball in Düsseldorf</p></li>
-          <li><p>Doku in Hamburg</p></li>
-          <li><p>Comercial in Frankreich</p></li>
-          <li><p>Thriller gedreht</p></li>
-          <li><p>In den Südsee gedreht</p></li>
-          <li><p>Abschlussprojekt</p></li>
+      <article class="vitaContainer">
+        <h1>Vita</h1>
+        <ul class="cv">
+          <li><p>2020-21 hat ne coole Website gekriegt</p></li>
+          <li><p>2019 war auf der Welt unterwegs</p></li>
+          <li><p>2018 megakrasser freelancer</p></li>
+          <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
+          <li><p>2016 hat macarons für sich entdeckt</p></li>
+          <li><p>2014 hat sein Abschlussprojekt</p></li>
+          <li>
+            <p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p>
+          </li>
+          <li><p>2010 gelernter Kamera</p></li>
         </ul>
-      </div>
-    </div>
+      </article>
+    </section>
 
     <!--footer-->
-<footer>
-    <div class="impressum" id="impressum"><h1>Impressum<br>&amp<br>Kontakt</h1></div>
-  <div class="impressum_content"><p>verantwortlich für den Inhalt diese Seite und Urheberrechtinhaber der Medien ist Björn. <br>Berliner Str. 13 12345 Berlin <br>bjorn@came.ra</p></div>
-  <div class="contactInfo">
-    <a class="contactBtn" href="#">
-        <p>Kontakt</p>
-      </a>
-  </div>
-</footer>
-
+    <footer>
+      <div class="impressum" id="impressum">
+        <h1>Impressum<br />&amp<br />Kontakt</h1>
+      </div>
+      <div class="impressum_content">
+        <p>
+          verantwortlich für den Inhalt diese Seite und Urheberrechtinhaber der
+          Medien ist Björn. <br />Berliner Str. 13 12345 Berlin
+          <br />bjorn@came.ra
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
