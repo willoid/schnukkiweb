@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Björn Düseler</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
       rel="stylesheet"
@@ -27,21 +30,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <nav>
-        <!--class NavBtn is for media query-->
-          <div class="navBtn"><i class="fas fa-angle-right"></i></div>
-          <ul class="navList">
-            <li><a href="#">Home</a></li>
-            <li><a href="#fi">Fiction</a></li>
-            <li><a href="#nonfi">Non Fiction</a></li>
-            <li><a href="#vita">Vita</a></li>
-          </ul>
-      </nav>
+    <nav>
+      <!--class NavBtn is for media query-->
+      <div id="navBtn" onclick="showNav ()"><i class="fas fa-bars"></i></div>
+      <ul id="navList">
+        <li><a href="#" onclick="hideNav()">Home</a></li>
+        <li><a href="#fi" onclick="hideNav()">Fiction</a></li>
+        <li><a href="#nonfi" onclick="hideNav()">Non Fiction</a></li>
+        <li><a href="#vita" onclick="hideNav()">Vita</a></li>
+      </ul>
+    </nav>
     <div class="landing">
       <aside class="bg"></aside>
       <header class="logo">
-        <div class="LogoName">Björn Düseler</div>
-        <div class="Sublogo">Kamera</div>
+        <div class="logoName">Björn Düseler</div>
+        <div class="subLogo">Kamera</div>
       </header>
       <main class="contact">
         <a class="contactBtn" onclick="showContact()">
@@ -71,7 +74,7 @@
 
     <section class="galleryBoxContainer" id="fi">
       <div class="galleryDesc">
-        <h1>Fiction Gallerie</h1>
+        <h1 class="gallery">Fiction Gallerie</h1>
         <p class="galleryTxt">
           Hier kannst du beschreiben was in den Kästchen gesehen wird.<br />
           Zum Beispiel: wer deine kunde sind oder wo du dich besser fühlst.<br />
@@ -84,7 +87,7 @@
       </div>
       <div class="galleryBox" id="fiBox"></div>
     </section>
-    <section class="galleryBoxContainer" id="nonfi">
+    < <section class="galleryBoxContainer" id="nonfi">
       <div class="galleryBox" id="nonfiBox"></div>
       <div class="galleryDesc">
         <h1>Non Fiction Gallerie</h1>
@@ -131,7 +134,7 @@
       </div>
       <div class="impressum_content">
         <p>
-          verantwortlich für den Inhalt diese Seite und Urheberrechtinhaber der
+          verantwortlich für den Inhalt dieser Seite und Urheberrechtinhaber der
           Medien ist Björn. <br />Berliner Str. 13 12345 Berlin
           <br />bjorn@came.ra
         </p>

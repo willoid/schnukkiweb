@@ -1,6 +1,5 @@
 /*z-index list: 1 navBtn für handy  2 contactModal*/
 
-
 :root {
   --White: #e8eddf;
   --Grell: #cfdbd5;
@@ -22,51 +21,57 @@
 }
 body {
   background: var(--Black);
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
 
-h1 {
-  font-family: var(--titleFont);
-  color: var(--Grell);
-  font-size: 5rem;
-  font-weight: 100;
+/*removes scrollbar from chrome*/
+body::-webkit-scrollbar {
+  width: 0 !important;
 }
 
-h2 {
-  font-family: var(--titleFont);
-  color: var(--Black);
-  font-size: 4rem;
-  font-weight: 100;
-  padding: 1em 0;
-}
-/*bc of navigation bar*/
-section {
-  padding-top: 12vh;
-  margin-top: 1em;
-}
-
-@media only screen and (max-width: 600px) {
-  nav {
-    width: 2.5em;
-    height: 20em;
-    position: fixed;
-    top: calc(50vh - 10em);
-    left: 0;
-    color: transparent;
-    background: transparent;
+@media (max-width: 600px) {
+  h1 {
+    font-family: var(--titleFont);
+    color: var(--Grell);
+    font-size: 5vh;
+    font-weight: 100;
   }
 
-  nav:hover > .navBtn {
+  h2 {
+    font-family: var(--titleFont);
+    color: var(--Black);
+    font-size: 10vw;
+    font-weight: 100;
+    padding: 15vh 0;
+  }
+
+  /*   section {
+    padding-top: 12vh;
+    margin-top: 1em;
+  } */
+
+  nav {
+    background-color: transparent;
+    width: 10em;
+    height: 30em;
+    position: fixed;
+    top: calc(50vh - 15em);
+    right: 0;
+  }
+
+  #navBtn.hideNavBtn {
     opacity: 0;
   }
-  .navBtn {
-    background-color: rgba(80, 87, 80, 0.4);
+  #navBtn {
+    background-color: rgba(80, 87, 80, 0.8);
     color: var(--Grell);
     z-index: 1;
     width: 2.5em;
-    height: 20em;
+    height: 2.5em;
     position: fixed;
-    top: calc(50vh - 10em);
-    left: 0;
+    top: calc(50vh - 1.25em);
+    left: calc(100vw - 2.5em);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,39 +79,37 @@ section {
     box-shadow: var(--shadow);
   }
 
-  .navBtn > i {
-    font-size: 5em;
+  #navBtn > i {
+    font-size: 2.5em;
     color: var(--Grell);
   }
-  nav > ul {
+  #navList {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: calc(50vh - 25em);
-    left: 0;
     list-style-type: none;
     width: 10em;
-    height: 48em;
+    height: 30em;
     background-color: rgba(80, 87, 80, 0.65);
 
-    transform: translateX(-10em);
+    transform: translateX(10em);
     transition: all 1s ease-in;
   }
-  nav:hover > ul {
+  #navList.showNavList {
     box-shadow: var(--shadow);
     transform: translateX(0);
     transition: all 1s ease-out;
   }
 
-  .navList > li {
+  #navList > li {
     width: 100%;
-    height: 5em;
+    height: 4.7em;
     font-family: var(--btnFont);
     font-weight: 50;
     font-size: 1.6em;
   }
 
-  .navList > li:hover {
+  #navList > li:hover {
     background: var(--Grell);
     transition: 1s ease-out all;
   }
@@ -124,374 +127,271 @@ section {
     color: var(--Black);
     transition: 1s ease-out all;
   }
-}
 
-/*Navigation Menu*/
+  .landing {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+      "logo"
+      "bg"
+      "contact";
+  }
 
-/*desktop version is hidden - only handy/tablet*/
-.navBtnBtn > i {
-  display: none;
-}
-.navList {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  right: 0;
-  list-style-type: none;
-  width: 100%;
-  height: 10vh;
-  background-color: rgba(80, 87, 80, 0.65);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
-  transition: all 1s ease-in;
-}
+  .logo {
+    grid-area: logo;
+  }
 
-.navList > li {
-  width: 15vw;
-  font-family: var(--btnFont);
-  font-weight: 50;
-  font-size: 1.6em;
-}
+  .logoName {
+    font-family: var(--logoFont);
+    font-size: 12vw;
+    text-transform: uppercase;
+    color: var(--White);
+    text-align: center;
+  }
+  .subLogo {
+    font-family: var(--titleFont);
+    font-size: 8vw;
+    color: var(--Grell);
+    text-align: right;
+    padding-right: 3em;
+  }
+  .bg {
+    grid-area: bg;
+    width: 100%;
+    height: 70vh;
+    background-image: url(./assets/bjoern_ttl.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
 
-.navList > li:hover {
-  background: var(--Grell);
-  transition: 1s ease-out all;
-}
+  .contact {
+    grid-area: contact;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+  }
 
-li > a {
-  display: block;
-  height: 100%;
-  text-align: center;
-  padding-top: 1.2em;
-  text-decoration: none;
-  color: var(--Grell);
-}
+  .contactBtn {
+    width: 100%;
+    max-width: 7em;
+    height: var(--btnHeight);
+    padding: 0.2em;
+    font-size: 2rem;
+    font-weight: 900;
+    border: var(--Yellow) solid 2px;
+    font-family: var(--btnFont);
+    color: var(--Yellow);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.9s ease-out all;
+  }
 
-li:hover > a {
-  color: var(--Black);
-  transition: 1s ease-out all;
-}
+  .contactBtn:active {
+    cursor: pointer;
+    border: var(--White) solid 2px;
+    color: var(--Black);
+    background: var(--Yellow);
+    box-shadow: inset -5px 5px 10px 4px rgba(0, 0, 0, 0.7);
+  }
 
-/*Landing page*/
-.landing {
-  width: 100%;
-  height: 100vh;
-  padding: 12vh 4em 0 4em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10fr 10fr 0.5fr;
-  grid-template-areas:
-    "bg logo"
-    "bg contact"
-    "neon neon";
-}
-
-/*Landing Page Background*/
-
-/*changed style apres Bjorns wish but commented out good idea*/
-.bg {
-  grid-area: bg;
-  /*original design had a overflown BG that was shown in a button element also as BG*/
-  /* width: calc(50vw + 16em); */
-  width: calc(50vw -4em);
-  height: calc(88vh - 6em);
-  background-image: url(./assets/bjoern_ttl.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  /*added z-index para sobreponer logo en el titulo pero ya no hace falta*/
-  /*  z-index: -10; */
-  /* position: absolute; */
-}
-
-/*Logo*/
-.logo {
-  grid-area: logo;
-  width: calc(50vw - 4em);
-  background-color: var(--Black);
-}
-.LogoName {
-  font-family: var(--logoFont);
-  font-size: 8rem;
-  text-transform: uppercase;
-  color: var(--White);
-  text-align: center;
-}
-.Sublogo {
-  font-family: var(--titleFont);
-  font-size: 5rem;
-  color: var(--Grell);
-  text-align: center;
-}
-
-/*Kontakt-button in header & footer*/
-
-.contact {
-  grid-area: contact;
-  width: calc(50vw - 4em);
-  display: flex;
-  justify-content: center;
-  margin-top: 5vh;
-}
-
-.contactBtn {
-  width: 100%;
-  max-width: 7em;
-  height: var(--btnHeight);
-  padding: 0.2em;
-  font-size: 2rem;
-  font-weight: 900;
-  border: var(--Yellow) solid 2px;
-  font-family: var(--btnFont);
-  color: var(--Yellow);
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.9s ease-out all;
-  
-}
-
-.contactBtn:hover {
-  cursor: pointer;
-  border: var(--White) solid 2px;
-  color: var(--Black);
-  background: var(--Yellow);
-  transition: 0.9s ease-out all;
-}
-
-#contactModal {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  backdrop-filter: blur(10px);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 1s, opacity 1s linear;
-}
-
-
-/*when classList is added*/
-#contactModal.show {
-  visibility: visible;
-  opacity: 1;
-  animation: showModal 1s ease-out;
-}
-
-@keyframes showModal {
-  from {
+  #contactModal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    visibility: hidden;
     opacity: 0;
+    transition: visibility 1s, opacity 1s linear;
   }
 
-  to {
+  /*when classList is added*/
+  #contactModal.show {
+    visibility: visible;
     opacity: 1;
-  }
-}
-.contactBox {
-  position: relative;
-  width:40em;
-  height: 30em;
-  background-color: var(--Grell);
-  top: calc(50vh - 15em);
-  left: calc(50vw - 20em);
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-.contactBox > button {
-  width: 3em;
-  height: 3em;
-  padding: 0;
-  border: none;
-  background: none;
-  color: var(--Black);
-  border: var(--Black) solid 1px;
-  position: absolute;
-  top: 0;
-  /*right: 0 doesnt work*/
-  left: calc(100% - 3em);
-  transition: background 1s ease-in-out;
-}
-
-.contactBox > button:hover {
-  background: var(--Yellow);
-  transition: background 1s ease-in-out;
-}
-
-.contactBox > span {
-  font-family: var(--paragraphFont);
-  font-size: 2rem;
-  display: block;
-  margin: 0.5em;
-}
-/*Neon pulse on the bottom*/
-.neon {
-  grid-area: neon;
-  width: 100%;
-  height: 5vh;
-  box-shadow: 0em 0px 0px 0px rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 100%;
-  left: 0;
-  transition: all 1s ease-in-out;
-}
-
-.landing:hover > .neon {
-  animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0em -5px 15px 5px rgba(0, 0, 0, 1);
+    animation: showModal 1s ease-out;
   }
 
-  70% {
-    box-shadow: 0em -10px 25px 6px rgba(0, 0, 0, 1);
+  @keyframes showModal {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+  .contactBox {
+    position: relative;
+    width: 60vw;
+    height: 30em;
+    background-color: var(--Grell);
+    top: calc(50vh - 15em);
+    left: calc(20vw);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  100% {
-    box-shadow: 0em -5px 15px 5px rgba(0, 0, 0, 1);
+  .contactBox > button {
+    width: 3em;
+    height: 3em;
+    font-family: var(--btnFont);
+    font-size: 1rem;
+    padding: 0;
+    background: none;
+    color: var(--Black);
+    border: var(--Black) solid 1px;
+    position: absolute;
+    top: 0;
+    /*right: 0 doesnt work*/
+    left: calc(100% - 3em);
+    background: var(--Yellow);
+    box-shadow: -0.2em 0.2em 0.4em 0.2em;
   }
-}
 
-/* 
-.GalleryContainer {
+  .contactBox > button:active {
+    box-shadow: inset -5px 5px 10px 4px rgba(0, 0, 0, 0.7);
+  }
 
-  width: 20em;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  position: relative;
-  z-index: 1;
-  left: -20em;
-  background-color: transparent;
-}
-.galleryContainer > a {
-  width: 20em;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--btnFont);
-  font-size: 4rem;
-  font-weight: 900;
+  .contactBox > span {
+    font-family: var(--paragraphFont);
+    font-size: 5vw;
+    display: block;
+    margin: 0.5em;
+  }
 
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: 0.9s ease-out all;
-} 
+  /*galleries with 100vh*/
 
-.nonFiction {
-  background-color: rgba(24, 24, 23, 0.6);
-  color: var(--Grell);
-}
- 
+  .galleryBoxContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+      "galleryDesc"
+      "galleryBox";
+    width: 100vw;
+    height: 100vh;
+  }
 
-.Fiction {
-  background-color: rgba(232, 237, 223, 0.6);
-  color: var(--Black);
-}
+  .galleryDesc {
+    width: 100vw;
+    height: 15vw;
+    padding-left: 10px;
+    grid-area: galleryDesc;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+      "galleryTitle"
+      "galleryTxt ";
+    text-align: center;
+  }
 
-.Filling {
-  grid-area: Filling;
-  background-color: var(--Black);
-}*/
+  .galleryTitle {
+    grid-area: galleryTitle;
+    display: block;
+  }
 
-/*Galleries & Vita */
+  .galleryTxt {
+    grid-area: galleryTxt;
+    color: var(--White);
+    font-family: var(--paragraphFont);
+    font-size: 2vh;
+    line-height: 2vh;
+    margin-top: 3vh;
+  }
 
-.galleryBoxContainer,
-.vita {
-  /*width 100vw overflows*/
-  width: 100%;
-  padding-left: 4em;
-  padding-right: 4em;
-  display: flex;
-  flex-direction: row;
-}
+  .galleryDesc > .contactBtn {
+    grid-area: contactBtn;
+    display: none;
+  }
 
-.galleryBox {
-  width: calc(70% - 4em);
-  height: 65vh;
-  background-color: var(--Grell);
-  box-shadow: inset -5px 5px 10px 4px rgba(0, 0, 0, 0.7);
-}
-/*fiction Gallery must have the shadow the oder way around*/
+  .galleryBox {
+    grid-area: galleryBox;
+    width: 95vw;
+    margin: 0 2.5vw;
+    height: 70vh;
+    background-color: var(--Grell);
+    box-shadow: var(--shadow);
+    margin-top: -8vh;
+  }
 
-#fiBox {
-  box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.6);
-}
+  .parallax {
+    /*width 100vw overflows*/
+    width: 100%;
+    height: 40vh;
+    background-image: url(./assets/parallax.JPG);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
 
-.galleryDesc {
-  width: calc (30% - 14em);
-  margin: 0 5em;
-  display: grid;
-}
+  .vita {
+    /*width 100vw overflows*/
+    width: 100%;
+    height: 170vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+      "vitaContainer"
+      "imgBox ";
+  }
 
-.galleryTxt {
-  color: var(--White);
-  font-family: var(--paragraphFont);
-  font-size: 1.5rem;
-  line-height: 3rem;
-}
+  .vitaContainer {
+    grid-area: vitaContainer;
+    width: 100vw;
+    margin-top: 5vh;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-/*parallax*/
+  .cv {
+    margin-top: 5vh;
+    padding: 0 3vw;
+    text-align: center;
+    color: var(--Grell);
+    font-size: 5vw;
+    line-height: 1.7em;
+  }
 
-.parallax {
-  /*width 100vw overflows*/
-  width: 100%;
-  height: 40vh;
-  background-image: url(./assets/parallax.JPG);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 25vh;
-}
-
-/*Vita*/
-
-/*vita has 4em padding + 4em margin*/
-.vitaContainer {
-  width: calc (60vw - 8em);
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.imgBox {
-  width: calc(40vw - 8em);
-  margin-right: 10vw;
-  background-image: url(./assets/vita.JPG);
-  box-shadow: var(--shadow);
-  background-size: cover;
-}
-
-.cv {
-  margin-top: 5vw;
-  color: var(--Grell);
-  font-size: 2rem;
-  line-height: 1.7em;
-}
-
+  .imgBox {
+    grid-area: imgBox;
+    width: 100vw;
+    background-image: url(./assets/vita.JPG);
+    box-shadow: var(--shadow);
+    background-size: cover;
+    background-position-x: -25vw;
+  }
 /*footer*/
 
 footer {
-  width: 99vw;
-  height: 70vh;
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "impressum impressum_content ";
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr 2fr;
+
+  grid-template-areas: "impressum" "impressum_content ";
   margin-top: 10vh;
+ padding: 3vw 3vw;
 }
 
 .impressum {
@@ -501,13 +401,378 @@ footer {
   justify-content: center;
 }
 .impressum_content {
+  width: 94vw;
+  height: 60vh;
   grid-area: impressum_content;
   background: var(--Grell);
-  margin: 4em 4em;
+  margin: 4em 0;
   box-shadow: var(--shadow);
   color: var(--Black);
   font-family: var(--paragraphFont);
-  line-height: 1.7em;
-  font-size: 2rem;
-  padding: 2em;
+  line-height: 8vw;
+  font-size:8vw;
+  padding: 3vw;
+}
+  
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-family: var(--titleFont);
+    color: var(--Grell);
+    font-size: 5rem;
+    font-weight: 100;
+  }
+
+  h2 {
+    font-family: var(--titleFont);
+    color: var(--Black);
+    font-size: 4rem;
+    font-weight: 100;
+    padding: 1em 0;
+  }
+  /*bc of navigation bar*/
+  section {
+    padding-top: 12vh;
+    margin-top: 1em;
+  }
+  /*Navigation Menu*/
+
+  /*desktop version is hidden - only handy/tablet*/
+  .navBtnBtn > i {
+    display: none;
+  }
+  #navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    list-style-type: none;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(80, 87, 80, 0.65);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    transition: all 1s ease-in;
+  }
+
+  #navList > li {
+    width: 15vw;
+    font-family: var(--btnFont);
+    font-weight: 50;
+    font-size: 1.6em;
+  }
+
+  #navList > li:hover {
+    background: var(--Grell);
+    transition: 1s ease-out all;
+  }
+
+  li > a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    padding-top: 1.2em;
+    text-decoration: none;
+    color: var(--Grell);
+  }
+
+  li:hover > a {
+    color: var(--Black);
+    transition: 1s ease-out all;
+  }
+
+  /*Landing page*/
+  .landing {
+    width: 100%;
+    height: 100vh;
+    padding: 12vh 4em 0 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10fr 10fr 0.5fr;
+    grid-template-areas:
+      "bg logo"
+      "bg contact"
+      "neon neon";
+  }
+
+  /*Landing Page Background*/
+
+  /*changed style apres Bjorns wish but commented out good idea*/
+  .bg {
+    grid-area: bg;
+    /*original design had a overflown BG that was shown in a button element also as BG*/
+    /* width: calc(50vw + 16em); */
+    width: calc(50vw -4em);
+    height: calc(88vh - 6em);
+    background-image: url(./assets/bjoern_ttl.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*added z-index para sobreponer logo en el titulo pero ya no hace falta*/
+    /*  z-index: -10; */
+    /* position: absolute; */
+  }
+
+  /*Logo*/
+  .logo {
+    grid-area: logo;
+    width: calc(50vw - 4em);
+  }
+  .logoName {
+    font-family: var(--logoFont);
+    font-size: 8rem;
+    text-transform: uppercase;
+    color: var(--White);
+    text-align: center;
+  }
+  .subLogo {
+    font-family: var(--titleFont);
+    font-size: 5rem;
+    color: var(--Grell);
+    text-align: center;
+  }
+
+  /*Kontakt-button in header & footer*/
+
+  .contact {
+    grid-area: contact;
+    width: calc(50vw - 4em);
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+  }
+
+  .contactBtn {
+    width: 100%;
+    max-width: 7em;
+    height: var(--btnHeight);
+    padding: 0.2em;
+    font-size: 2rem;
+    font-weight: 900;
+    border: var(--Yellow) solid 2px;
+    font-family: var(--btnFont);
+    color: var(--Yellow);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.9s ease-out all;
+  }
+
+  .contactBtn:hover {
+    cursor: pointer;
+    border: var(--White) solid 2px;
+    color: var(--Black);
+    background: var(--Yellow);
+    transition: 0.9s ease-out all;
+  }
+
+  #contactModal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 1s linear;
+  }
+
+  /*when classList is added*/
+  #contactModal.show {
+    visibility: visible;
+    opacity: 1;
+    animation: showModal 1s ease-out;
+  }
+
+  @keyframes showModal {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+  .contactBox {
+    position: relative;
+    width: 40em;
+    height: 30em;
+    background-color: var(--Grell);
+    top: calc(50vh - 15em);
+    left: calc(50vw - 20em);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactBox > button {
+    width: 3em;
+    height: 3em;
+    font-family: var(--btnFont);
+    font-size: 1rem;
+    padding: 0;
+    background: none;
+    color: var(--Black);
+    border: var(--Black) solid 1px;
+    position: absolute;
+    top: 0;
+    /*right: 0 doesnt work*/
+    left: calc(100% - 3em);
+    transition: all 1s ease-in-out;
+  }
+
+  .contactBox > button:hover {
+    background: var(--Yellow);
+    box-shadow: -0.2em 0.2em 0.4em 0.2em;
+    transition: all 1s ease-in-out;
+  }
+
+  .contactBox > span {
+    font-family: var(--paragraphFont);
+    font-size: 2rem;
+    display: block;
+    margin: 0.5em;
+  }
+  /*Neon pulse on the bottom*/
+  .neon {
+    grid-area: neon;
+    width: 100%;
+    height: 5vh;
+    box-shadow: 0em 0px 0px 0px rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 100%;
+    left: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  .landing:hover > .neon {
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0em -5px 15px 5px rgba(0, 0, 0, 1);
+    }
+
+    70% {
+      box-shadow: 0em -10px 25px 6px rgba(0, 0, 0, 1);
+    }
+
+    100% {
+      box-shadow: 0em -5px 15px 5px rgba(0, 0, 0, 1);
+    }
+  }
+
+  /*Galleries & Vita */
+
+  .galleryBoxContainer,
+  .vita {
+    /*width 100vw overflows*/
+    width: 100%;
+    padding-left: 4em;
+    padding-right: 4em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .galleryBox {
+    width: calc(70% - 4em);
+    height: 65vh;
+    background-color: var(--Grell);
+    box-shadow: inset -5px 5px 10px 4px rgba(0, 0, 0, 0.7);
+  }
+  /*fiction Gallery must have the shadow the oder way around*/
+
+  #fiBox {
+    box-shadow: inset 5px 5px 10px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .galleryDesc {
+    width: calc (30% - 14em);
+    margin: 0 5em;
+    display: grid;
+  }
+
+  .galleryTxt {
+    color: var(--White);
+    font-family: var(--paragraphFont);
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+
+  /*parallax*/
+
+  .parallax {
+    /*width 100vw overflows*/
+    width: 100%;
+    height: 40vh;
+    background-image: url(./assets/parallax.JPG);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 25vh;
+  }
+
+  /*Vita*/
+
+  /*vita has 4em padding + 4em margin*/
+  .vitaContainer {
+    width: calc (60vw - 8em);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imgBox {
+    width: calc(40vw - 8em);
+    margin-right: 10vw;
+    background-image: url(./assets/vita.JPG);
+    box-shadow: var(--shadow);
+    background-size: cover;
+  }
+
+  .cv {
+    margin-top: 5vw;
+    color: var(--Grell);
+    font-size: 2rem;
+    line-height: 1.7em;
+  }
+
+  /*footer*/
+
+  footer {
+    width: 99vw;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: "impressum impressum_content ";
+    margin-top: 10vh;
+  }
+
+  .impressum {
+    grid-area: impressum;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .impressum_content {
+    grid-area: impressum_content;
+    background: var(--Grell);
+    margin: 4em 4em;
+    box-shadow: var(--shadow);
+    color: var(--Black);
+    font-family: var(--paragraphFont);
+    line-height: 1.7em;
+    font-size: 2rem;
+    padding: 2em;
+  }
 }

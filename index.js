@@ -16,3 +16,13 @@ const showContact = () => {
   window.addEventListener('scroll', () => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
   });
+
+  const showNav = () => {
+    document.getElementById('navList').classList.add('showNavList');
+    document.getElementById('navBtn').classList.add('hideNavBtn') 
+}
+
+const hideNav = () => {
+    document.getElementById('navList').classList.remove('showNavList');
+    document.getElementById('navBtn').classList.remove('hideNavBtn') 
+}
