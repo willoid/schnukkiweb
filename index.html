@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Björn Düseler</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
       rel="stylesheet"
     />
@@ -19,6 +23,12 @@
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Assistant&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -34,112 +44,145 @@
       <!--class NavBtn is for media query-->
       <div id="navBtn" onclick="showNav ()"><i class="fas fa-bars"></i></div>
       <ul id="navList">
-        <li><a href="#" onclick="hideNav()">Home</a></li>
-        <li><a href="#fi" onclick="hideNav()">Fiction</a></li>
-        <li><a href="#nonfi" onclick="hideNav()">Non Fiction</a></li>
-        <li><a href="#vita" onclick="hideNav()">Vita</a></li>
+        <li style="font-weight: 700; font-size: 30px">
+          <a href="#about">Björn Düseler</a>
+        </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#film">Film</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="landing">
-      <aside class="bg"></aside>
+      <video autoplay muted loop>
+        <source src="assets/landing.MOV" type="video/mp4" />
+      </video>
       <header class="logo">
-        <div class="logoName">Björn Düseler</div>
-        <div class="subLogo">Kamera</div>
+        <h1 class="logoName"><a href="#contact">Björn Düseler</a></h1>
+        <div class="subLogo">Documentary Filmmaker</div>
       </header>
-      <main class="contact">
-        <a class="contactBtn" onclick="showContact()">
-          <p>Kontakt</p>
-        </a>
-        <div id="contactModal">
-          <div class="contactBox">
-            <button onclick="closeContact()">x</button>
-            <h2>Kontakt-Info:</h2>
-            <span><i class="fas fa-envelope"></i> camera@bjorn.de</span>
-            <span><i class="fas fa-phone"></i> 0123 456789</span>
-          </div>
-        </div>
-      </main>
-      <aside class="neon"></aside>
 
-      <!-- removed upon Björns wish but acually a nice idea:
-        <div class="toGallery">
-          <div class="galleryContainer">
-          <a class="nonFiction" href="#nonfi"><p>Non Fiction</p></a>
-          <a class="Fiction" href="#fi"><p>Fiction</p></a>
-           </div>
-        </div> 
-      <div class="Filling"></div>-->
+      <div class="navBtn2">
+        <a href="#film" class="btnDown displayed"
+          ><i class="fas fa-angle-down"></i
+        ></a>
+        <a href="#" class="btnUp undisplayed"
+          ><i class="fas fa-angle-up"></i
+        ></a>
+      </div>
     </div>
+
     <!-- second page -->
 
-    <section class="galleryBoxContainer" id="fi">
-      <div class="galleryDesc">
-        <h1 class="gallery">Fiction Gallerie</h1>
-        <p class="galleryTxt">
-          Hier kannst du beschreiben was in den Kästchen gesehen wird.<br />
-          Zum Beispiel: wer deine kunde sind oder wo du dich besser fühlst.<br />
-          ich schreibe einfach ein paar linien mehr <br />
-          damit du siehst wie es am ende wird.
-        </p>
-        <a class="contactBtn" onclick="showContact()">
-          <p>Kontakt</p>
-        </a>
+    <section class="filmContainer" id="film">
+      <h2 class="hidden">Film</h2>
+      <div class="galleryBox">
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img1.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img2.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img3.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img4.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img5.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img6.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
+        <div
+          class="card hidden"
+          style="background-image: url(./assets/img7.jpeg)"
+        >
+          <div class="hoverLayer" onclick="showVideo()"><div class="playBtn"></div></div>
+        </div>
       </div>
-      <div class="galleryBox" id="fiBox"></div>
-    </section>
-    < <section class="galleryBoxContainer" id="nonfi">
-      <div class="galleryBox" id="nonfiBox"></div>
-      <div class="galleryDesc">
-        <h1>Non Fiction Gallerie</h1>
-        <p class="galleryTxt">
-          Hier kannst du beschreiben was in den Kästchen gesehen wird.<br />
-          Zum Beispiel: wer deine kunde sind oder wo du dich besser fühlst.<br />
-          ich schreibe einfach ein paar linien mehr <br />
-          damit du siehst wie es am ende wird.
-        </p>
-        <a class="contactBtn" onclick="showContact()">
-          <p>Kontakt</p>
-        </a>
+<div id="videoModal">
+        <button class="videoBtn" onclick="closeVideo()">close</button>
+        <div class="videoContainer">
+          <iframe
+            width="1116"
+            height="589"
+            src="https://www.youtube.com/embed/aFaRQHoOc2M"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </section>
-    <!-- parallax -->
-
-    <aside class="parallax"></aside>
 
     <!--third page-->
 
-    <section class="vita" id="vita">
-      <div class="imgBox"></div>
-      <article class="vitaContainer">
-        <h1>Vita</h1>
-        <ul class="cv">
-          <li><p>2020-21 hat ne coole Website gekriegt</p></li>
-          <li><p>2019 war auf der Welt unterwegs</p></li>
-          <li><p>2018 megakrasser freelancer</p></li>
-          <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
-          <li><p>2016 war fleißig unterwegs</p></li>
-          <li><p>2014 hat sein Abschlussprojekt</p></li>
-          <li>
-            <p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p>
-          </li>
-          <li><p>2010 gelernter Kamera</p></li>
-        </ul>
-      </article>
+    <section class="about" id="about">
+      <h2 class="hidden">About Me</h2>
+      <div class="aboutContainer">
+        <div class="aboutImg hidden"></div>
+        <article class="cv hidden">
+          <ul>
+            <li><p>2020-21 hat ne coole Website gekriegt</p></li>
+            <li><p>2019 war auf der Welt unterwegs</p></li>
+            <li><p>2018 megakrasser freelancer</p></li>
+            <li><p>2017 war mit durchgefeiertem Willy beim Dok</p></li>
+            <li><p>2016 war fleißig unterwegs</p></li>
+            <li><p>2014 hat sein Abschlussprojekt</p></li>
+            <li>
+              <p>2012-13 war ein cooler Mitbewohner und fleißiger Student</p>
+            </li>
+            <li><p>2010 gelernter Kamera</p></li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <!--footer-->
-    <footer>
-      <div class="impressum" id="impressum">
-        <h1>Impressum<br />&amp<br />Kontakt</h1>
-      </div>
-      <div class="impressum_content">
-        <p>
-          verantwortlich für den Inhalt dieser Seite und Urheberrechtinhaber der
-          Medien ist Björn. <br />Berliner Str. 13 12345 Berlin
-          <br />bjorn@came.ra
-        </p>
+    <footer id="contact">
+      <h2 class="hidden">Contact</h2>
+      <p class="hidden" style="margin-top: 10vh">bjoern.dueseler@email.com</p>
+      <p class="hidden">0123/4567891</p>
+      <button class="showImpressum hidden" onclick="showImpressum()">
+        Disclaimer
+      </button>
+      <div id="impressum">
+        <div class="impressumBox">
+          <button onclick="closeImpressum()">x</button>
+          <h2>Disclaimer</h2>
+          <span>
+            Responsible for the content is Björn. <br />Berliner Str. 13 12345
+            Berlin <br />bjorn@came.ra
+          </span>
+          <span>I don't collect your data</span>
+        </div>
       </div>
     </footer>
+    <p class="signature">
+      Made with
+      <a href="https://willoid.live"><i class="fas fa-heart"></i></a> by Willy
+      Calvo (2021)
+    </p>
     <script src="./index.js"></script>
   </body>
 </html>
