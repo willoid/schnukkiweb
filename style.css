@@ -61,7 +61,6 @@ h2 {
   text-align: center;
   font-weight: 700;
   font-size: 50px;
-  padding-top: 5vh;
 }
 
 #navList {
@@ -101,7 +100,6 @@ video {
   font-weight: 800;
   font-size: 50px;
   color: var(--Yellow);
-  text-shadow: 1px 1px 0 #bea016;
 }
 
 .subLogo {
@@ -137,7 +135,7 @@ video {
 
 /*film*/
 .galleryBox {
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-bottom: 10vh;
   width: 100%;
   height: auto;
@@ -254,7 +252,7 @@ iframe {
 /*about*/
 
 .aboutContainer {
-  margin-top: 20vh;
+  margin-top: 15vh;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -364,15 +362,14 @@ footer {
   align-items: flex-start;
   font-size: 25px;
   justify-content: space-evenly;
+  padding-left: 20px;
 }
 
 .vita > li {
   text-align: left;
-  justify-self: left;
-  display: block;
 }
 
-.weirdP {
+li > p {
   text-align: left;
   line-height: 30px;
 }
