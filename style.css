@@ -348,3 +348,25 @@ footer > button {
 .signature:hover > a {
   color: var(--Yellow);
 }
+
+.vita {
+  text-align: left;
+  border: 1px solid red;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 25px;
+  justify-content: space-evenly;
+}
+
+.vita > li {
+  text-align: left;
+  justify-self: left;
+  display: block;
+}
+
+.weirdP {
+  text-align: left;
+  line-height: 30px;
+}
