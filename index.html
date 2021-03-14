@@ -28,7 +28,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -44,7 +44,7 @@
       <!--class NavBtn is for media query-->
       <div id="navBtn" onclick="showNav ()"><i class="fas fa-bars"></i></div>
       <ul id="navList">
-        <li style="font-weight: 700; font-size: 30px">
+        <li style="font-weight: 700; font-size: 25px">
           <a href="#about">Björn Düseler</a>
         </li>
         <li><a href="#">Home</a></li>
@@ -55,11 +55,11 @@
     </nav>
     <div class="landing">
       <video autoplay muted loop>
-        <source src="assets/landing.MOV" type="video/mp4" />
+        <source src="assets/montage1.MOV" type="video/mp4" />
       </video>
       <header class="logo">
         <h1 class="logoName"><a href="#contact">Björn Düseler</a></h1>
-        <div class="subLogo">Documentary Filmmaker</div>
+        <div class="subLogo">Cinematographer</div>
       </header>
 
       <div class="navBtn2">
@@ -169,28 +169,31 @@
     <!--footer-->
     <footer id="contact">
       <h2 class="hidden">Contact</h2>
-      <p class="hidden" style="margin-top: 10vh">bjoern.dueseler@email.com</p>
-      <p class="hidden">0123/4567891</p>
-      <button class="showImpressum hidden" onclick="showImpressum()">
-        Disclaimer
-      </button>
+      <p class="hidden" style="margin-top: 10vh">b.dueseler@gmx.net&nbsp&nbsp&nbsp 0049&nbsp177&nbsp9717152</p>
+     <!--  <p class="hidden"></p> -->
+      
       <div id="impressum">
         <div class="impressumBox">
           <button onclick="closeImpressum()">x</button>
-          <h2>Disclaimer</h2>
+          <h2>Impressum</h2>
           <span>
-            Responsible for the content is Björn. <br />Berliner Str. 13 12345
-            Berlin <br />bjorn@came.ra
+            Responsible for the content is Björn Düseler. <br />Kopenhagener Str. 43 10437 
+            Berlin <br /> b.dueseler@gmx.net
           </span>
           <span>I don't collect your data</span>
         </div>
       </div>
     </footer>
+    <div class="finalContainer">
     <p class="signature">
       Made with
       <a href="https://willoid.live"><i class="fas fa-heart"></i></a> by Willy
       Calvo (2021)
     </p>
+    <button class="showImpressum" onclick="showImpressum()">
+      Impressum
+    </button>
+  </div>
     <script src="./index.js"></script>
   </body>
 </html>

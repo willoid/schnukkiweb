@@ -66,16 +66,17 @@ h2 {
 
 #navList {
   width: 100%;
-  height: 5vh;
+  height: 100px;
   display: grid;
   grid-template-columns: 2.8fr 0.2fr 0.2fr 0.2fr 0.2fr;
   grid-template-rows: 1fr;
   list-style-type: none;
+  padding-top: 35px;
 }
 
 #navList > li:not(:first-child) {
-  padding-top: 2vh;
-  text-align: end;
+  text-align: center;
+  padding-top: 5px;
 }
 
 /*landing page*/
@@ -92,21 +93,22 @@ video {
 
 .logo {
   position: absolute;
-  top: 40vh;
+  top: 60vh;
   left: 10vw;
 }
 
 .logoName {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 50px;
   color: var(--Yellow);
   text-shadow: 1px 1px 0 #bea016;
 }
 
 .subLogo {
-  margin-top: 5vh;
+  margin-top: 2vh;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
+  text-shadow: 1px 1px 0 black;
 }
 
 .fas {
@@ -186,7 +188,8 @@ video {
   justify-content: center;
 }
 
-#videoModal, #impressum {
+#videoModal,
+#impressum {
   position: fixed;
   background: rgba(0, 0, 0, 0.7);
   width: 100vw;
@@ -196,10 +199,12 @@ video {
   z-index: 100;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 1s, opacity 1s linear;}
+  transition: visibility 1s, opacity 1s linear;
+}
 
-  /*when classList is added*/
-#videoModal.show, #impressum.show {
+/*when classList is added*/
+#videoModal.show,
+#impressum.show {
   visibility: visible;
   opacity: 1;
   animation: showModal 1s ease-out;
@@ -257,13 +262,13 @@ iframe {
 }
 
 .aboutImg {
-  width: 500px;
-  height: 500px;
-  border-radius: 50% 50%;
-  background-image: url(./assets/vita.JPG);
-  background-size: 300%;
-  background-position-y: 35%;
-  background-position-x: 30%;
+  width: 700px;
+  height: 440px;
+  transform: scaleX(-1);
+  background-image: url(./assets/unnamed.jpg);
+  background-size: 150%;
+  background-position-y: 25%;
+  background-position-x: 88%;
 }
 
 .cv {
@@ -280,22 +285,7 @@ footer {
   margin: 20vh auto;
   display: flex;
   flex-direction: column;
-  position: relative;
 }
-
-footer > button {
-  align-self: center;
-  border: white 1px solid;
-  margin-top: 10vh;
-  width: 200px;
-  font-size: 20px;
-  background: black;
-  color: white;
-  cursor: pointer;
-}
-
-
-
 
 .impressumBox {
   position: relative;
@@ -336,9 +326,15 @@ footer > button {
   margin: 0.5em;
 }
 
-.signature {
-  text-align: start;
+.finalContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+
+/* .signature {
+} */
 .fa-heart {
   font-size: 15px;
   color: inherit;
@@ -349,10 +345,20 @@ footer > button {
   color: var(--Yellow);
 }
 
+.showImpressum {
+  border: none;
+  width: auto;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  text-align: right;
+}
+
 .vita {
   text-align: left;
-  border: 1px solid red;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -369,4 +375,8 @@ footer > button {
 .weirdP {
   text-align: left;
   line-height: 30px;
+}
+
+#contact > p {
+  font-size: 30px;
 }
